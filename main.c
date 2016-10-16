@@ -1,6 +1,7 @@
 #define __WRAP
 
 #include <stdio.h>
+#include <unistd.h>
 
 #ifdef __WRAP
 #include "wrap.h"
@@ -10,17 +11,21 @@
 
 int main(int argc, char* argv[])
 {
-	getopt(argc, argv);
+	wrap_init();
 	int a = 2;
 	int b = 3;
 
-	printf("%d\n",add(a, b));
-	printf("%d\n",add(a, b));
-	printf("%d\n",add(a, b));
-	printf("%d\n",add(a, b));
-	printf("%d\n",add(a, b));
-	printf("%d\n",mul(a, b));
-	
+
+	while(1)
+	{
+		sleep(2);
+//		printf("%d\n",add(a, b));
+//		printf("%d\n",add(a, b));
+//		printf("%d\n",add(a, b));
+//		printf("%d\n",add(a, b));
+		printf("%d\n",add(a, b));
+		printf("%d\n",mul(a, b));
+	}
 
 	return 0;	
 }
